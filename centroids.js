@@ -1,4 +1,4 @@
-var centroids ={type": "FeatureCollection","features": 
+var centroids = {"type": "FeatureCollection","features": 
 [{ "type": "Feature", "properties": { "name": "Academy Park" }, "geometry": { "type": "Point", "coordinates": [ -111.999567, 40.6705479 ] } },
 { "type": "Feature", "properties": { "name": "Arcadia" }, "geometry": { "type": "Point", "coordinates": [ -111.9734086, 40.6631074 ] } },
 { "type": "Feature", "properties": { "name": "Neil Armstrong Academy" }, "geometry": { "type": "Point", "coordinates": [ -112.0164547, 40.7094217 ] } },
