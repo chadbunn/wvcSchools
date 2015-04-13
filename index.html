@@ -128,7 +128,7 @@ height: 160px;
 <body>
 
 <div id='bar'>
-  <input id='search' class='form-control' placeholder='Search for treatment...'>
+  <input id='search' class='form-control' placeholder='Search for school...'>
 </div>
 <!--div id='transit'></div>-->
 <div id='map' class='map'></div>
@@ -139,7 +139,7 @@ height: 160px;
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2x1Z2lzIiwiYSI6IlB5TlZENVUifQ.Z597Ia0qffZlYcGpbJtzTA';
 
 var map = L.mapbox.map('map', 'slugis.jnoidgol')
-  .setView([35.405, -120.523], 10);
+  .setView([40.6850, -111.9975], 13);
 var hash = L.hash(map);
 var MyControl = L.Control.extend({
     options: {
@@ -164,19 +164,16 @@ map.addControl(new MyControl());
 map.gridControl.options.follow = true;
 var ui = document.getElementById('map-ui');
 // The data for Proposed, Planning, and Active treatments is based on the areas that are planned on being treated.  Actual treatment areas may vary.
-var sraLayer = L.mapbox.tileLayer('slugis.ac9s5rk9');
-var activeLayer = L.mapbox.tileLayer('slugis.3zb8olxr');
-var completeLayer = L.mapbox.tileLayer('slugis.t4wmte29');
-var planningLayer = L.mapbox.tileLayer('slugis.n7zgds4i');
-var proposedLayer = L.mapbox.tileLayer('slugis.u2g1fw29');
-var chippingLayer = L.mapbox.tileLayer('slugis.hdjz6w29');
+var elemLayer = L.mapbox.tileLayer('chadbunn.g29sh5mi');
+var jhLayer = L.mapbox.tileLayer('chadbunn.fg2b7qfr');
+var shLayer = L.mapbox.tileLayer('chadbunn.qqizr529');
+var specLayer = L.mapbox.tileLayer('chadbunn.o3g3z0k9');
 
-addLayer(sraLayer, L.mapbox.gridLayer('slugis.ac9s5rk9'),'SRA', 1);
-addLayer(activeLayer, L.mapbox.gridLayer('slugis.3zb8olxr'),'Active', 6);
-addLayer(completeLayer, L.mapbox.gridLayer('slugis.t4wmte29'),'Complete', 5);
-addLayer(planningLayer, L.mapbox.gridLayer('slugis.n7zgds4i'),'Planning', 4);
-addLayer(proposedLayer, L.mapbox.gridLayer('slugis.u2g1fw29'),'Proposed', 3);
-addLayer(chippingLayer, L.mapbox.gridLayer('slugis.hdjz6w29'),'Chipping', 2);
+addLayer(elemLayer, L.mapbox.gridLayer('chadbunn.g29sh5mi'),'Elementary', 1);
+addLayer(jhLayer, L.mapbox.gridLayer('chadbunn.fg2b7qfr'),'Junior High', 2);
+addLayer(shLayer, L.mapbox.gridLayer('chadbunn.qqizr529'),'Senior High', 3);
+addLayer(specLayer, L.mapbox.gridLayer('chadbunn.o3g3z0k9'),'Specialized', 4);
+
 
 function addLayer(layer, gridlayer, name, zIndex) {
     layer
